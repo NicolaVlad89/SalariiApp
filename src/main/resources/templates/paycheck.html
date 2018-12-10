@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml" xmlns:employee="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Paycheck</title>
+</head>
+
+<style>
+    table, th, td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+    th, td {
+        padding: 5px;
+        text-align: left;
+    }
+</style>
+
+<body>
+
+<h2>Employee</h2>
+
+<table id="employee" employee:table="true" style="width:50%">
+    <tr th:each="employee : ${employees}">
+        <th>Prenume</th>
+        <td><p align="right" th:text="${employee.prenume}"></p></td>
+    </tr>
+    <tr th:each="employee : ${employees}">
+        <th>Nume</th>
+        <td><p align="right" th:text="${employee.nume}"></p></td>
+    </tr>
+    <tr th:each="employee : ${employees}">
+        <th>Salariu brut</th>
+        <td><p align="right" th:text="${employee.salariuBrut}"></p></td>
+    </tr>
+    <tr th:each="employee : ${employees}">
+        <th>CAS</th>
+        <td><p align="right" th:text="${employee.cas}"></p></td>
+    </tr>
+    <tr th:each="employee : ${employees}">
+        <th>Sanatate</th>
+        <td><p align="right" th:text="${employee.sanatate}"></p></td>
+    </tr>
+    <tr th:each="employee : ${employees}">
+        <th>Somaj</th>
+        <td><p align="right" th:text="${employee.somaj}"></p></td>
+    </tr>
+    <tr th:each="employee : ${employees}">
+        <th><h1>Salariu net</h1></th>
+        <td><h1 align="right" th:text="${employee.salariuNet}"></h1></td>
+    </tr>
+</table>
+
+<p>Click pentru a printa fluturas.</p>
+
+<button onclick="myFunction()">Print paycheck</button>
+
+<script>
+    function myFunction() {
+        window.print();
+    }
+</script>
+
+</body>
+</html>
